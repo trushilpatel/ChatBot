@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Admin</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+
+<body>
+    <!-- OPTIONS  -->
+    <div class="col-6 mt-3" id="options">
+        <h3>Please select any Option</h3>
+        <button type="button" class="ml-3 btn btn-dark" onclick="selected_qna_LBT()">Insert</button>
+        <button type="button" class="btn btn-dark" onclick="selected_delete()">Delete</button>
+        <button type="button" class="btn btn-dark" onclick="selected_get_details()">Get Details</button>
+    </div>
+
+
+    <!-- GET DETAILS -->
+    <div class="col-6 mt-3" id="show_get_details" style="display: none">
+        <h3>Please select any type to add</h3>
+        <button type="button" class="ml-3 btn btn-dark" onclick="get_details_qna()">Get Details QnA</button>
+        <button type="button" class="btn btn-dark" onclick="get_details_button()">Get Details Button</button>
+    </div>
+
+    <!-- Get Details Buttons DONE-->
+    <div class="col-6 m-3 pt-3 border border-dark" id="show_get_details_button" style="display: none;">
+        <form>
+            <div class="row no-gutters m-1">
+                <div class="col-1 pl-2 pt-2">
+                    <div>Enter Button Name</div>
+                </div>
+                <div class="col-1 pl-4 pt-2">
+                    <div>:</div>
+                </div>
+                <div class="col-8">
+                    <input type="text" class="form-control" name="text-desc" id="GD_button_id">
+                </div>
+                <div class="col-2">
+                    <button type="button" class="btn btn-primary float-right" onclick="GD_button()">Get button Details</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- Get Details QnA DONE-->
+    <div class="col-6 m-3 pt-3 border border-dark" id="show_get_details_qna" style="display: none;">
+        <form>
+            <div class="row no-gutters m-1">
+                <div class="col-1 pl-2 pt-2">
+                    <div>Enter Question Name</div>
+                </div>
+                <div class="col-1 pl-4 pt-2">
+                    <div>:</div>
+                </div>
+                <div class="col-8">
+                    <input type="text" class="form-control" name="text-desc" id="GD_qna_id">
+                </div>
+                <div class="col-2">
+                    <button type="button" class="btn btn-primary float-right" onclick="GD_qna()">Get Details of QNA</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+
+
+
+    <!-- DELETE DONE-->
+    <div class="col-6 mt-3" id="select_delete" style="display: none">
+        <h3>Please select any type to add</h3>
+        <button type="button" class="ml-3 btn btn-dark" onclick="selected_delete_qna()">Delete QnA</button>
+        <button type="button" class="btn btn-dark" onclick="selected_delete_button()">Delete Button</button>
+    </div>
+
+    <!-- Delete button DONE-->
+    <div class="col-6 m-3 pt-3 border border-dark" id="delete_button" style="display: none;">
+        <form>
+            <div class="row no-gutters m-1">
+                <div class="col-1 pl-2 pt-2">
+                    <div>Enter Button Name</div>
+                </div>
+                <div class="col-1 pl-4 pt-2">
+                    <div>:</div>
+                </div>
+                <div class="col-8">
+                    <input type="text" class="form-control" name="text-desc" id="delete_button_id">
+                </div>
+                <div class="col-2">
+                    <button type="button" class="btn btn-primary float-right" onclick="delete_button()">Delete</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- Delete QnA DONE-->
+        <div class="col-6 m-3 pt-3 border border-dark" id="delete_qna" style="display: none;">
+        <form>
+            <div class="row no-gutters m-1">
+                <div class="col-1 pl-2 pt-2">
+                    <div>Enter Question Name</div>
+                </div>
+                <div class="col-1 pl-4 pt-2">
+                    <div>:</div>
+                </div>
+                <div class="col-8">
+                    <input type="text" class="form-control" name="text-desc" id="delete_qna_id">
+                </div>
+                <div class="col-2">
+                    <button type="button" class="btn btn-primary float-right" onclick="delete_qna()">Delete</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+    <!-- QNA  and BUTTON selection DONE-->
+    <div class="col-6 mt-3" id="select_qna_LBT" style="display: none">
+        <h3>Please select any type to add</h3>
+        <button type="button" class="ml-3 btn btn-dark" onclick="selected_qna()">QnA</button>
+        <button type="button" class="btn btn-dark" onclick="selected_button()">Button</button>
+    </div>
+
+    <!-- QNA DONE DONE -->
+    <div class="col-6 m-3 pt-3 border border-dark" id="insert_qna" style="display: none;">
+        <form>
+            <div class="row no-gutters m-1">
+                <div class="col-1 pl-2 pt-2">
+                    <div>Question</div>
+                </div>
+                <div class="col-1 pl-4 pt-2">
+                    <div>:</div>
+                </div>
+                <div class="col-8">
+                    <input type="text" class="form-control" name="text-desc" id="qna_question">
+                </div>
+            </div>
+            <div class="row no-gutters m-1">
+                <div class="col-1 pl-2 pt-2">
+                    <div>Answer</div>
+                </div>
+                <div class="col-1 pl-4 pt-2">
+                    <div>:</div>
+                </div>
+                <div class="col-8">
+                    <input type="text" class="form-control" name="text-desc" id = "qna_answer">
+                </div>
+                <div class="col-2">
+                    <button type="button" class="btn btn-primary float-right" onclick="qna_save()">save</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- BUTTONS DONE -->
+    <div class="col-6 m-3 pt-3 border border-dark" id="insert_button" style="display: none;">
+        <form class="m-3">
+            <div class="row no-gutters">
+                <div class="col-2">
+                    <button type="button" class="btn btn-dark" >Button</button>
+                </div>
+                <div class="col-4 ">
+                    <input type="text" id="LBT_main_button_name" class="form-control">
+                </div>
+                <div class="col-6">
+                    <button type="button" class="btn btn-primary float-right" onclick="LBT_save()">save</button>
+                </div>
+            </div>
+
+            <hr class="border border-dark">
+
+            <div class="row no-gutters" id = "LBT">
+                <div class="col-4 pl-2 pt-2">
+                    <div>Add Description with</div>
+                </div>
+                <div class="col-2 pl-2" id = 'hide_link'>
+                    <button type="button" class="btn btn-dark" onclick="LBT_add_link()">Link</button>
+                </div>
+
+                <div class="col-2 pl-2">
+                    <button type="button" class="btn btn-dark" onclick="LBT_add_btn()" >Button</button>
+                </div>
+                <div class="col-2">
+                    <button type="button" class="btn btn-dark" onclick="LBT_add_txt()">Text</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+
+    <!-- ADD Link, button, text DONE -->
+    <div id="add_link_button_text" class="col-6 m-3 pt-3" ></div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="../static/javascript/myadmin.js"></script>
+
+</body>
+</html>
