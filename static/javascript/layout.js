@@ -157,7 +157,6 @@ function button_response(msg)
              else if (link !== undefined)
                 {
                     document.getElementById('wave').style.display = "none";
-                    alert(myjson.link);
                     window.open(myjson.link,'_blank');
                 }
 
