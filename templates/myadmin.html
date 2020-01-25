@@ -125,6 +125,7 @@
     </div>
 
     <!-- QNA DONE DONE -->
+    <!-- @Change Any text in input converts in to lowercase automatically pp-->
     <div class="col-6 m-3 pt-3 border border-dark" id="insert_qna" style="display: none;">
         <form>
             <div class="row no-gutters m-1">
@@ -135,7 +136,7 @@
                     <div>:</div>
                 </div>
                 <div class="col-8">
-                    <input type="text" class="form-control" name="text-desc" id="qna_question">
+                    <input type="text" style="text-transform: lowercase" class="form-control" name="text-desc" id="qna_question">
                 </div>
             </div>
             <div class="row no-gutters m-1">
@@ -146,7 +147,7 @@
                     <div>:</div>
                 </div>
                 <div class="col-8">
-                    <input type="text" class="form-control" name="text-desc" id = "qna_answer">
+                    <input type="text" style="text-transform: lowercase" class="form-control" name="text-desc" id = "qna_answer">
                 </div>
                 <div class="col-2">
                     <button type="button" class="btn btn-primary float-right" onclick="qna_save()">save</button>

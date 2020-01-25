@@ -66,7 +66,6 @@ function insert_user_request_text(elm,rawText)
         '</div>'+
     '</div>'
     );
-
 }
 
 
