@@ -14,6 +14,21 @@
 	<style type="text/css">
 
 	</style>
+	<!--Linked script is not working so embedded here only.	-->
+	<script src="https://www.google.com/jsapi"></script>
+	<script>
+	  	google.load("elements", "1", {packages: "transliteration"});
+      	function onLoad() {
+        	var options = {
+            sourceLanguage: google.elements.transliteration.LanguageCode.ENGLISH,
+            destinationLanguage:[google.elements.transliteration.LanguageCode.GUJARATI],
+            transliterationEnabled: true
+        	};
+        var control =new google.elements.transliteration.TransliterationControl(options);
+        control.makeTransliteratable(['textinput']);
+      	}
+      	google.setOnLoadCallback(onLoad);
+	</script>
 </head>
 
 
@@ -105,6 +120,5 @@
 
 <!-- Static scripts-->
 <script src="../static/javascript/layout.js"></script>
-
 </body>
 </html>
