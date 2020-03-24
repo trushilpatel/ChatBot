@@ -1,7 +1,5 @@
-from flask import Flask, flash, redirect, render_template, request, session, abort
+from flask import Flask, render_template, request
 import mongodb
-
-# import utility
 
 app = Flask(__name__)
 DBU = mongodb.DataBaseUtility()

@@ -1,184 +1,218 @@
-#chatbox{
-	float: right;
-	bottom: 0;
-	right:0;
-	position: fixed;
-	height: 400px;
-	background-repeat: no-repeat;
-	background-position: center center;
-	display: none;
+#chatbox {
+    float: right;
+    bottom: 0;
+    right: 0;
+    position: fixed;
+    height: 400px;
+    max-height: 95vh;
+    min-height: 50vh;
+    min-width: 25vw;
+    max-width: 35vw;
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: none;
 }
 
 
-#bot-icon{
-	bottom: 0;
-	right: 0;
-	float: right;
-	position: fixed;
-	display: block;
-	opacity: 0.7;
+#bot-icon {
+    bottom: 0;
+    right: 0;
+    float: right;
+    position: fixed;
+    display: block;
+    opacity: 0.7;
 }
-#bot-icon:hover{
-	opacity: 1;
+
+#bot-icon:hover {
+    opacity: 1;
 }
 
 
-i{
-	transition: .3s;
-}
-i:hover{
-	color: white;
-	cursor: pointer;
-}
-#textinput{
-	border: none;
-	border-radius: 10px;
-	padding-left: 10px;
-	width: 100%;
-	transition: .3s;
-}
-#textinput:focus{
-	outline: none;
-	border-radius: 0px;
-	border-bottom: 1px black inset;
-	background-color: transparent;
+i {
+    transition: .3s;
 }
 
-.msg{
-	border-radius: 5px;
-	width: auto;
-	font-size: 14px;
-	animation-duration: 3s;
+i:hover {
+    color: white;
+    cursor: pointer;
 }
 
-.bot-opt{
-	background-color: white;
-	border-radius: 20px;
-	border: 1px solid deepskyblue;
-	width: auto;
-	font-size: 14px;
-	vertical-align: top;
-	transition: .5s;
-	/*animation-name: opt;
-	animation-duration: 2s;*/
+#textinput {
+    border: none;
+    border-radius: 10px;
+    padding-left: 10px;
+    width: 100%;
+    transition: .3s;
 }
 
-.bot-opt:hover{
-	color: skyblue;
-	cursor: pointer;
+#textinput:focus {
+    outline: none;
+    border-radius: 0px;
+    border-bottom: 1px black inset;
+    background-color: transparent;
 }
 
-.dropdown-menu{
-	width: auto;
-	height: auto;
-	margin-right: 2vw;
+.msg {
+    border-radius: 5px;
+    width: auto;
+    font-size: 14px;
+    animation-duration: 3s;
+}
+
+.bot-opt {
+    background-color: white;
+    border-radius: 20px;
+    border: 1px solid deepskyblue;
+    width: auto;
+    font-size: 14px;
+    vertical-align: top;
+    transition: .5s;
+    /*animation-name: opt;
+    animation-duration: 2s;*/
+}
+
+.bot-opt:hover {
+    color: skyblue;
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    width: auto;
+    height: auto;
+    margin-right: 2vw;
 
 }
 
 
 .dots-cont {
-       position: relative;
-       left: 0px;
-       bottom: 0px;
+    position: relative;
+    left: 0px;
+    bottom: 0px;
 }
+
 .dot {
-   width: 7px;
-   height: 7px;
-   background: #22303e;
-   display: inline-block;
-   border-radius: 50%;
-   right: 0px;
-   bottom: 0px;
-   margin: 0px 2.5px;
-   position: relative;
-   animation: jump 1s infinite;
+    width: 7px;
+    height: 7px;
+    background: #22303e;
+    display: inline-block;
+    border-radius: 50%;
+    right: 0px;
+    bottom: 0px;
+    margin: 0px 2.5px;
+    position: relative;
+    animation: jump 1s infinite;
 }
+
 .dots-cont:hover > .dot {
-   position: relative;
-   bottom: 0px;
-   animation: none;
+    position: relative;
+    bottom: 0px;
+    animation: none;
 }
+
 .dots-cont .dot-1 {
-   -webkit-animation-delay: 100ms;
-   animation-delay: 100ms;
+    -webkit-animation-delay: 100ms;
+    animation-delay: 100ms;
 }
+
 .dots-cont .dot-2 {
-   -webkit-animation-delay: 200ms;
-   animation-delay: 200ms;
+    -webkit-animation-delay: 200ms;
+    animation-delay: 200ms;
 }
+
 .dots-cont .dot-3 {
-   -webkit-animation-delay: 300ms;
-   animation-delay: 300ms;
+    -webkit-animation-delay: 300ms;
+    animation-delay: 300ms;
 }
+
 @keyframes jump {
-   0%   {bottom: 0px;}
-   20%  {bottom: 5px;}
-   40%  {bottom: 0px;}
+    0% {
+        bottom: 0px;
+    }
+    20% {
+        bottom: 5px;
+    }
+    40% {
+        bottom: 0px;
+    }
 }
 
 
-
-@keyframes user_msg{
-	from{background-color: deepskyblue;}
-	to{background-color: rgb(166, 231, 255);}
+@keyframes user_msg {
+    from {
+        background-color: deepskyblue;
+    }
+    to {
+        background-color: rgb(166, 231, 255);
+    }
 }
 
-@keyframes bot_msg{
-	from{background-color: whitesmoke;}
-	to{background-color: white;}
+@keyframes bot_msg {
+    from {
+        background-color: whitesmoke;
+    }
+    to {
+        background-color: white;
+    }
 }
 
-@keyframes opt{
-	from{background-color: skyblue;}
-	to{background-color: white;}
+@keyframes opt {
+    from {
+        background-color: skyblue;
+    }
+    to {
+        background-color: white;
+    }
 }
 
 
 @keyframes scale-in-br {
-  0% {
-    -webkit-transform: scale(0);
-            transform: scale(0);
-    -webkit-transform-origin: 100% 100%;
-            transform-origin: 100% 100%;
-    opacity: 1;
-  }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    -webkit-transform-origin: 100% 100%;
-            transform-origin: 100% 100%;
-    opacity: 1;
-  }
+    0% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+        -webkit-transform-origin: 100% 100%;
+        transform-origin: 100% 100%;
+        opacity: 1;
+    }
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-transform-origin: 100% 100%;
+        transform-origin: 100% 100%;
+        opacity: 1;
+    }
 }
 
 @keyframes scale-out-br {
-  0% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    -webkit-transform-origin: 100% 100%;
-            transform-origin: 100% 100%;
-    opacity: 1;
-  }
-  100% {
-    -webkit-transform: scale(0);
-            transform: scale(0);
-    -webkit-transform-origin: 100% 100%;
-            transform-origin: 100% 100%;
-    opacity: 1;
-  }
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-transform-origin: 100% 100%;
+        transform-origin: 100% 100%;
+        opacity: 1;
+    }
+    100% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+        -webkit-transform-origin: 100% 100%;
+        transform-origin: 100% 100%;
+        opacity: 1;
+    }
 }
 
 
 .scrollbar-info::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
     background-color: #F5F5F5;
-    border-radius: 10px; }
+    border-radius: 10px;
+}
 
 .scrollbar-info::-webkit-scrollbar {
     width: 12px;
-    background-color: #F5F5F5; }
+    background-color: #F5F5F5;
+}
 
 .scrollbar-info::-webkit-scrollbar-thumb {
     border-radius: 10px;
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
-    background-image: linear-gradient(skyblue,rgb(217, 238, 250)); }
+    background-image: linear-gradient(skyblue, rgb(217, 238, 250));
+}

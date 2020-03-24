@@ -1,5 +1,6 @@
-import pymongo
 import json
+
+import pymongo
 
 
 def connectToMongo(altas_link="mongodb+srv://m001:m001@cluster0-r9obi.mongodb.net/college?retryWrites=true&w=majority"):

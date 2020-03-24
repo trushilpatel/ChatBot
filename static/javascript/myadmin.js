@@ -18,7 +18,7 @@ var html_data = null;
 
 
 // Option LBT selected DONE
-function selected_qna_LBT(){
+function selected_qna_LBT() {
     document.getElementById('options').style.display = 'none';
     document.getElementById('select_qna_LBT').style.display = 'block';
 }
@@ -31,15 +31,15 @@ function LBT_add_link() {
     link = 1;
     html_data =
         '<div class="row no-gutters m-1">' +
-            '<div class="col-1 pl-2 pt-2">' +
-            '<div>Link</div>' +
-            '</div>' +
-            '<div class="col-1 pl-4 pt-2">' +
-            '<div>:</div>' +
-            '</div>' +
-            '<div class="col-10">' +
-            '<input type="text" class="form-control" id="added_link"' + ' name="link-desc">' +
-            '</div>' +
+        '<div class="col-1 pl-2 pt-2">' +
+        '<div>Link</div>' +
+        '</div>' +
+        '<div class="col-1 pl-4 pt-2">' +
+        '<div>:</div>' +
+        '</div>' +
+        '<div class="col-10">' +
+        '<input type="text" class="form-control" id="added_link"' + ' name="link-desc">' +
+        '</div>' +
         '</div>';
     document.getElementById('add_link_button_text').insertAdjacentHTML('beforeend', html_data);
 }
@@ -60,26 +60,25 @@ function selected_button() {
 
 
 // add Button input inside button div DONE
-function LBT_add_btn(){
+function LBT_add_btn() {
     if (hide_LBT_link === 0) {
         hide_LBT_link = 1;
         document.getElementById("hide_link").style.display = 'none';
         LBT_add_btn();
-    }
-    else {
+    } else {
         temp = "added_button_" + String(LBT_json.total_buttons);
-        html_data =	'<div class="row no-gutters m-1">'+
-                            '<div class="col-1 pl-2 pt-2">'+
-                                '<div>Button ' + LBT_json.total_buttons +'</div>'+
-                            '</div>'+
-                            '<div class="col-1 pl-4 pt-2">'+
-                                '<div>:</div>'+
-                            '</div>'+
-                            '<div class="col-4">'+
-                                '<input type="text" class="form-control" id='+temp+' name="button-name">'+
-                            '</div>'+
-                        '</div>';
-        LBT_json.total_buttons+=1;
+        html_data = '<div class="row no-gutters m-1">' +
+            '<div class="col-1 pl-2 pt-2">' +
+            '<div>Button ' + LBT_json.total_buttons + '</div>' +
+            '</div>' +
+            '<div class="col-1 pl-4 pt-2">' +
+            '<div>:</div>' +
+            '</div>' +
+            '<div class="col-4">' +
+            '<input type="text" class="form-control" id=' + temp + ' name="button-name">' +
+            '</div>' +
+            '</div>';
+        LBT_json.total_buttons += 1;
         document.getElementById('add_link_button_text').insertAdjacentHTML('beforeend', html_data);
     }
 }
@@ -91,20 +90,19 @@ function LBT_add_txt() {
         hide_LBT_link = 1;
         document.getElementById("hide_link").style.display = 'none';
         LBT_add_txt();
-    }
-    else {
+    } else {
         const temp = "added_text_" + String(LBT_json.total_texts);
         const html_data =
             '<div class="row no-gutters m-1">' +
-                '<div class="col-1 pl-2 pt-2">' +
-                '<div>Text ' + LBT_json.total_texts + '</div>' +
-                '</div>' +
-                '<div class="col-1 pl-4 pt-2">' +
-                '<div>:</div>' +
-                '</div>' +
-                '<div class="col-10">' +
-                '<input type="text" class="form-control" id=' + temp + ' name="text-desc">' +
-                '</div>' +
+            '<div class="col-1 pl-2 pt-2">' +
+            '<div>Text ' + LBT_json.total_texts + '</div>' +
+            '</div>' +
+            '<div class="col-1 pl-4 pt-2">' +
+            '<div>:</div>' +
+            '</div>' +
+            '<div class="col-10">' +
+            '<input type="text" class="form-control" id=' + temp + ' name="text-desc">' +
+            '</div>' +
             '</div>';
         LBT_json.total_texts += 1;
         document.getElementById('add_link_button_text').insertAdjacentHTML('beforeend', html_data);
@@ -119,7 +117,7 @@ function qna_save() {
         "answer": $("#qna_answer").val()
     };
 
-    $.get("/save/qna",{msg : JSON.stringify(qna_json)}).done(function (data) {
+    $.get("/save/qna", {msg: JSON.stringify(qna_json)}).done(function (data) {
         alert(data);
         window.location = "/admin";
     });
@@ -138,23 +136,21 @@ function LBT_save() {
 
         temp = "#added_text_";
         for (var i = 0; i < LBT_json.total_texts; i++) {
-            LBT_json.texts.push($(temp+i).val());
+            LBT_json.texts.push($(temp + i).val());
         }
 
-        $.get("/save/LBT/BT", {msg : JSON.stringify(LBT_json)}).done(function(data) {
+        $.get("/save/LBT/BT", {msg: JSON.stringify(LBT_json)}).done(function (data) {
             alert(data);
             window.location = '/admin';
 
         });
-    }
-    else
-    {
+    } else {
         temp = {
             "main_button_name": $('#LBT_main_button_name').val(),
             "link": $('#added_link').val()
         };
 
-        $.get("/save/LBT/link", {msg : JSON.stringify(temp)} ).done(function(data) {
+        $.get("/save/LBT/link", {msg: JSON.stringify(temp)}).done(function (data) {
             alert(data);
             window.location = '/admin';
         });
@@ -194,7 +190,7 @@ function get_details_button() {
 function GD_button() {
     temp = $("#GD_button_id").val();
 
-    $.get("/getDetails/button",{msg : temp}).done(function (data) {
+    $.get("/getDetails/button", {msg: temp}).done(function (data) {
         alert(data);
         window.location = "/admin";
     });
@@ -205,7 +201,7 @@ function GD_button() {
 function GD_qna() {
     temp = $("#GD_qna_id").val();
 
-    $.get("/getDetails/qna",{msg : temp}).done(function (data) {
+    $.get("/getDetails/qna", {msg: temp}).done(function (data) {
         const d = data;
         alert(d);
         window.location = "/admin";
@@ -245,7 +241,7 @@ function selected_delete_button() {
 function delete_button() {
     temp = $("#delete_button_id").val();
 
-    $.get("/delete/button",{msg : temp}).done(function (data) {
+    $.get("/delete/button", {msg: temp}).done(function (data) {
         alert(data);
         window.location = "/admin";
     });
@@ -256,7 +252,7 @@ function delete_button() {
 function delete_qna() {
     temp = $("#delete_qna_id").val();
 
-    $.get("/delete/qna",{msg : temp}).done(function (data) {
+    $.get("/delete/qna", {msg: temp}).done(function (data) {
         alert(data);
 
         window.location = "/admin";
