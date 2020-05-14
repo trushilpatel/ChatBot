@@ -191,9 +191,30 @@ function GD_button() {
     temp = $("#GD_button_id").val();
 
     $.get("/getDetails/button", {msg: temp}).done(function (data) {
-        const html_data =
-            "<div class="col-6 m-3 pt-3></div>"
-        window.location = "/admin";
+
+        main_button_name = data["main_button_name"];
+        total_buttons = data["total_buttons"];
+        total_texts = data["total_texts"];
+        button_names = data["button_names"];
+
+        texts = data["texts"];
+        var html_data=' ';
+        for (var i in button_names){
+            html_data +=
+                '<div class="row no-gutters m-1">'+
+                    '<div class="col-1 pl-2 pt-2">'+
+                        '<div>Button</div>'+
+                    '</div>'+
+                    '<div class="col-1 pl-4 pt-2">'+
+                        '<div>:</div>'+
+                    '</div>'+
+                    '<div class="col-4 pt-2">'+
+                        '<div>'+button_names[i]+'</div>'+
+                    '</div>'+
+                '</div>';
+        }
+
+        document.getElementById('show_get_details_button').insertAdjacentHTML('beforeend', html_data);
     });
 }
 

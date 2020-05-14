@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 import json
+import re
 import mongodb
 import requests
 
@@ -18,8 +19,20 @@ def layout():
 @app.route('/botResponse/get')
 def botResponse():
     msg = request.args.get("msg")
-    small = msg.lower()
-    return DBU.find_qna_reply(small)
+    print(msg[0])
+    match = re.search(r'[a-zA-Z0-9]+', msg)
+    if(match):
+        print("english")
+        small = msg.lower()
+        res = DBU.find_qna_reply(small)
+    else:
+        print("notenglish")
+        res = DBU.find_qna_reply(msg)
+        if (res == "I am sorry, currently i do not have the information about the same."):
+            res = 'નરેન્દ્ર મોદ દે આવ છ'
+            #res = requests.get(link, params={"msg": msg, "topNSentences": 1, "sentenceLength": 3})
+
+    return res
 
 
 @app.route('/buttonResponse/get')
@@ -33,9 +46,9 @@ def button_botResponse():
 def advanceResponse():
     msg = request.args.get("msg")
     num = request.args.get("topNSentences")
-    x = requests.get(link, params={"msg": msg, "topNSentences": num, "sentenceLength": 3})
-    res = json.loads(x.text)
-    print(res)
+    #x = requests.get(link, params={"msg": msg, "topNSentences": num, "sentenceLength": 3})
+    #res = json.loads(x.text)
+    #print(res)
     res = {'નરેન્દ્ર મોદ દે આવ છ': 0.3067945953367415, 'નરેન્દ્ર મોદ દે સાથ જ': 0.05474789711674041}
     return res
 
@@ -91,7 +104,8 @@ def get_details_qna():
 @app.route("/getDetails/button")
 def get_details_buttons():
     msg = request.args.get("msg")
-    return str(DBU.find_button_reply(msg))
+    res = DBU.find_button_reply(msg)
+    return res
 
 
 if __name__ == "__main__":

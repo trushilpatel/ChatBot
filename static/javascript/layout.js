@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function () {
       '<div class="row no-gutters">'+
            '<div class="col-11 col-sm-11 col-md-10 col-lg-9 col-xl-9 ml-2 mt-2">'+
                 '<div class="msg py-1 px-2 float-left border bg-white text-dark" style="border-color:whitesmoke;animation-name: bot_msg;">'+
-                    'How many answers you want to get? '+
+                    'Choose numbers of possible answers '+
                 '</div>'+
             '</div>'+
             '<div class="col-11 col-sm-11 col-md-10 col-lg-9 col-xl-9 ml-2 mt-1">';
