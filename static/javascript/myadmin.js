@@ -191,7 +191,8 @@ function GD_button() {
     temp = $("#GD_button_id").val();
 
     $.get("/getDetails/button", {msg: temp}).done(function (data) {
-        alert(data);
+        const html_data =
+            "<div class="col-6 m-3 pt-3></div>"
         window.location = "/admin";
     });
 }

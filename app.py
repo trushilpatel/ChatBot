@@ -1,8 +1,11 @@
 from flask import Flask, render_template, request
+import json
 import mongodb
+import requests
 
 app = Flask(__name__)
 DBU = mongodb.DataBaseUtility()
+link = "http://3b32e889.ngrok.io/msg"
 
 
 @app.route('/')
@@ -25,6 +28,16 @@ def button_botResponse():
     temp = DBU.find_button_reply(msg)
     print(temp)
     return str(temp).replace("'", '"')
+
+@app.route('/advanceResponse/get')
+def advanceResponse():
+    msg = request.args.get("msg")
+    num = request.args.get("topNSentences")
+    x = requests.get(link, params={"msg": msg, "topNSentences": num, "sentenceLength": 3})
+    res = json.loads(x.text)
+    print(res)
+    res = {'નરેન્દ્ર મોદ દે આવ છ': 0.3067945953367415, 'નરેન્દ્ર મોદ દે સાથ જ': 0.05474789711674041}
+    return res
 
 
 @app.route('/admin')

@@ -43,7 +43,7 @@
          title="How can I help ?" onclick="open_chatbox()">
 </div>
 <!-- Chat Bot Layout -->
-<div class="container p-0 col-9 col-sm-6 col-md-4 col-xl-3 m-sm-1 m-md-2 m-lg-3 m-xl-3 rounded " id="chatbox"
+<div class="container p-0 col-9 col-sm-6 col-md-4 col-xl-2 m-sm-1 m-md-2 m-lg-3 m-xl-3 rounded " id="chatbox"
      style="box-shadow: 0px 0px 5px 1px rgb(56,56,56);">
     <div class="row no-gutters" style="height: 11%; background-image: linear-gradient(skyblue,rgb(217, 238, 250)); ">
         <!-- Chat Bot Name -->
@@ -56,6 +56,11 @@
         <!-- Close chatbot button -->
         <div class="col-4 col-sm-4 col-md-4 col-xl-4 ">
             <div class="dropdown float-right p-2">
+                <!-- Rounded switch -->
+                <label class="switch" data-toggle="tooltip" data-placement="down" title="Advance Mode">
+                  <input type="checkbox">
+                  <span class="slider round"></span>
+                </label>
                 <i class="material-icons" data-toggle="dropdown">toc</i>
                 <i class="material-icons" onclick="close_chatbox()">clear</i>
                 <div class="dropdown-menu">
